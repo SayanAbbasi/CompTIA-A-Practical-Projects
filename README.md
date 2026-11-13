@@ -6,17 +6,17 @@ Welcome to my practical IT and networking documentation repository. This portfol
 
 ## Lab Project 1: Basic Network Diagnostics & Baseline Configuration
 
-### 🎯 Objective
+### Objective
 To perform fundamental network diagnostic procedures, identify local IP settings, test connectivity paths, and document SOHO router security standards based on CompTIA A+ Core 1 & Core 2 specifications.
 
-### 🛠️ Tools & Environment Used
+### Tools & Environment Used
 - **OS:** Windows 10/11 Command Prompt (CMD)
 - **Networking Commands:** `ipconfig`, `ping`, `tracert`, `nslookup`
 - **Environment:** SOHO Router Interface
 
 ---
 
-### 📝 Step-by-Step Execution & Documentation
+### Step-by-Step Execution & Documentation
 
 #### Step 1: Local Network Configuration Discovery
 Executing `ipconfig /all` to retrieve local IPv4 address, Subnet Mask, Default Gateway, and MAC address.
@@ -105,19 +105,40 @@ Tracing the network path and hops from my local system to Google Public DNS (8.8
 
 ```cmd
 tracert 8.8.8.8
-    C:\Users\abbas>tracert 8.8.8.8
+   C:\Users\abbas>tracert 8.8.8.8
+   
+   Tracing route to dns.google [8.8.8.8]
+   over a maximum of 30 hops:
+   
+     1    12 ms    17 ms     6 ms  192.168.68.1
+     2     *        *        *     Request timed out.
+     3    27 ms    14 ms    14 ms  ae21-20.tor-cor-bdr04.distributel.net [206.80.255.14]
+     4    16 ms    12 ms    11 ms  74.125.32.42
+     5    13 ms    11 ms    12 ms  192.178.99.39
+     6    18 ms    12 ms    10 ms  216.239.50.119
+     7    15 ms    16 ms    12 ms  dns.google [8.8.8.8]
 
-Tracing route to dns.google [8.8.8.8]
-over a maximum of 30 hops:
-
-  1    12 ms    17 ms     6 ms  192.168.68.1
-  2     *        *        *     Request timed out.
-  3    27 ms    14 ms    14 ms  ae21-20.tor-cor-bdr04.distributel.net [206.80.255.14]
-  4    16 ms    12 ms    11 ms  74.125.32.42
-  5    13 ms    11 ms    12 ms  192.178.99.39
-  6    18 ms    12 ms    10 ms  216.239.50.119
-  7    15 ms    16 ms    12 ms  dns.google [8.8.8.8]
-
-Trace complete.
+      Trace complete.
 ```
+#### Step 4: DNS Resolution & Lookup Verification
+Querying Domain Name System (DNS) records to verify name resolution functionality.
 
+```cmd
+nslookup google.com
+C:\Users\abbas>nslookup google.com
+Server:  dns.google
+Address:  8.8.8.8
+
+Non-authoritative answer:
+Name:    google.com
+Addresses:  2607:f8b0:4023:1804::8a
+          2607:f8b0:4023:1804::64
+          2607:f8b0:4023:1804::71
+          2607:f8b0:4023:1804::65
+          142.250.137.102
+          142.250.137.138
+          142.250.137.100
+          142.250.137.101
+          142.250.137.139
+          142.250.137.113
+```
