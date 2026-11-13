@@ -23,29 +23,81 @@ Executing `ipconfig /all` to retrieve local IPv4 address, Subnet Mask, Default G
 
 ```cmd
 ipconfig /all
+
 Windows IP Configuration
 
+   Host Name . . . . . . . . . . . . : Sayan
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
 
 Wireless LAN adapter Local Area Connection* 1:
 
    Media State . . . . . . . . . . . : Media disconnected
    Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : 16-5A-41-C3-F6-93
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
 
 Wireless LAN adapter Local Area Connection* 2:
 
    Media State . . . . . . . . . . . : Media disconnected
    Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Physical Address. . . . . . . . . : 1A-5A-41-C3-F6-93
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
 
 Wireless LAN adapter Wi-Fi:
 
    Connection-specific DNS Suffix  . :
-   Link-local IPv6 Address . . . . . : fe80::16c0:775a:f498:5566%10
-   IPv4 Address. . . . . . . . . . . : 192.168.68.54
+   Description . . . . . . . . . . . : Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter
+   Physical Address. . . . . . . . . : 14-5A-41-C3-F6-93
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::16c0:775a:f498:5566%10(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.68.54(Preferred)
    Subnet Mask . . . . . . . . . . . : 255.255.252.0
+   Lease Obtained. . . . . . . . . . : November 12, 2026 9:19:45 AM
+   Lease Expires . . . . . . . . . . : November 12, 2026 9:56:50 PM
    Default Gateway . . . . . . . . . : fe80::7ef1:7eff:fea6:d581%10
                                        192.168.68.1
+   DHCP Server . . . . . . . . . . . : 192.168.68.1
+   DHCPv6 IAID . . . . . . . . . . . : 118774337
+   DHCPv6 Client DUID. . . . . . . . : 00-01-01-00-31-A5-98-D3-00-E0-4C-68-0C-22
+   DNS Servers . . . . . . . . . . . : 8.8.8.8
+                                       8.8.4.4
+   NetBIOS over Tcpip. . . . . . . . : Enabled
 
 Ethernet adapter Bluetooth Network Connection:
 
    Media State . . . . . . . . . . . : Media disconnected
    Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : 14-5A-41-C3-F6-94
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+```
+
+#### Step 2: Connectivity Testing & Latency Verification
+
+Verifying external network reachability and packet stability by pinging Google Public DNS (`8.8.8.8`).
+
+```cmd
+ping
+    C:\Users\abbas>ping 8.8.8.8
+
+    Pinging 8.8.8.8 with 32 bytes of data:
+    Reply from 8.8.8.8: bytes=32 time=16ms TTL=119
+    Reply from 8.8.8.8: bytes=32 time=13ms TTL=119
+    Reply from 8.8.8.8: bytes=32 time=20ms TTL=119
+    Reply from 8.8.8.8: bytes=32 time=13ms TTL=119
+
+    Ping statistics for 8.8.8.8:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 13ms, Maximum = 20ms, Average = 15ms
+```
+   
