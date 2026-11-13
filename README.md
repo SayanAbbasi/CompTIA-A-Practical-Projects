@@ -100,4 +100,24 @@ ping
     Approximate round trip times in milli-seconds:
         Minimum = 13ms, Maximum = 20ms, Average = 15ms
 ```
-   
+#### Step 3: Route Tracing & Path Analysis
+Tracing the network path and hops from my local system to Google Public DNS (8.8.8.8) to analyze routing efficiency.
+
+```cmd
+tracert 8.8.8.8
+    C:\Users\abbas>tracert 8.8.8.8
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+
+  1    12 ms    17 ms     6 ms  192.168.68.1
+  2     *        *        *     Request timed out.
+  3    27 ms    14 ms    14 ms  ae21-20.tor-cor-bdr04.distributel.net [206.80.255.14]
+  4    16 ms    12 ms    11 ms  74.125.32.42
+  5    13 ms    11 ms    12 ms  192.178.99.39
+  6    18 ms    12 ms    10 ms  216.239.50.119
+  7    15 ms    16 ms    12 ms  dns.google [8.8.8.8]
+
+Trace complete.
+```
+
